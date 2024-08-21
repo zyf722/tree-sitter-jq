@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "tree-sitter-jq"
+version = "0.1.0"
+description = "jq grammar for the tree-sitter parsing library."
+authors = ["Max Alex <MaxMixAlex@protonmail.com>", "Alexander Flurie <_@flurie.net>"]
+readme = "README.md"
+packages = [
+    { include = "tree_sitter_jq", from = "bindings/python" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.build]
+script = "./bindings/python/build.py"
+generate-setup-file = true
+
+[tool.poetry.group.dev.dependencies]
+types-setuptools = "^71.1.0.20240818"
+
+[build-system]
+requires = ["poetry-core", "setuptools"]
+build-backend = "poetry.core.masonry.api"
